@@ -1,0 +1,28 @@
+CREATE DATABASE IF NOT EXISTS blood_donation;
+USE blood_donation;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  email VARCHAR(100) UNIQUE,
+  password VARCHAR(255)
+);
+
+CREATE TABLE IF NOT EXISTS donors (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT,
+  name VARCHAR(100),
+  blood_group VARCHAR(5),
+  location VARCHAR(150),
+  phone VARCHAR(20),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS requests (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(100),
+  blood_group VARCHAR(5),
+  location VARCHAR(150),
+  contact VARCHAR(50),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
