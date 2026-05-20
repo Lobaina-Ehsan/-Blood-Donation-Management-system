@@ -48,7 +48,7 @@ Blood-Donation-Website/
 
 ### 1️⃣ Clone the Repository
 
-git clone https://github.com/your-username/blood-donation.git
+git clone https://github.com/Lobaina-Ehsan/blood-donation.git
 cd blood-donation
 
 
